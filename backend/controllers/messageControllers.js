@@ -18,9 +18,8 @@ const allMessages = asyncHandler(async (req, res) => {
   }
 });
 
-//@description     Create New Message
+//Create New Message
 //@route           POST /api/Message/
-//@access          Protected
 const sendMessage = asyncHandler(async (req, res) => {
   const { content, chatId } = req.body;
 
@@ -36,6 +35,7 @@ const sendMessage = asyncHandler(async (req, res) => {
   };
 
   try {
+
     var message = await Message.create(newMessage);
 
     message = await message.populate("sender", "name pic").execPopulate();

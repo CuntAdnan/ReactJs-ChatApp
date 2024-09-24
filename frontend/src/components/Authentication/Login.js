@@ -2,13 +2,15 @@ import { Button } from "@chakra-ui/button";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
 import { VStack } from "@chakra-ui/layout";
+import { useToast } from "@chakra-ui/react";
+
 import { useState } from "react";
 import axios from "axios";
-import { useToast } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
 import { ChatState } from "../../Context/ChatProvider";
 
 const Login = () => {
+  
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const toast = useToast();
@@ -64,7 +66,7 @@ const Login = () => {
         status: "error",
         duration: 5000,
         isClosable: true,
-        position: "bottom",
+        position: "bottom", 
       });
       setLoading(false);
     }
@@ -90,7 +92,7 @@ const Login = () => {
             type={show ? "text" : "password"}
             placeholder="Enter password"
           />
-          <InputRightElement width="4.5rem">
+          <InputRightElement tRightElement width="4.5rem">
             <Button h="1.75rem" size="sm" onClick={handleClick}>
               {show ? "Hide" : "Show"}
             </Button>

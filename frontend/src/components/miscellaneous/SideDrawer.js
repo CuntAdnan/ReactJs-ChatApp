@@ -16,6 +16,7 @@ import {
   DrawerHeader,
   DrawerOverlay,
 } from "@chakra-ui/modal";
+
 import { Tooltip } from "@chakra-ui/tooltip";
 import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Avatar } from "@chakra-ui/avatar";
@@ -33,6 +34,7 @@ import UserListItem from "../userAvatar/UserListItem";
 import { ChatState } from "../../Context/ChatProvider";
 
 function SideDrawer() {
+  
   const [search, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -142,7 +144,7 @@ function SideDrawer() {
           </Button>
         </Tooltip>
         <Text fontSize="2xl" fontFamily="Work sans">
-          Talk-A-Tive
+          QuickChat
         </Text>
         <div>
           <Menu>
